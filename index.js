@@ -1,13 +1,12 @@
 const express = require('express');
 const path = require('path');
-const generatePassword = require('password-generator');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/passwords', (req, res) => {
-  const what_to_put = "hello, the test is successfu";
+app.get('/api/test', (req, res) => {
+  const what_to_put = "hello, the test is successful";
 
 // Return them as json
   res.json(what_to_put);
@@ -22,4 +21,4 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log(`Password generator listening on ${port}`);
+console.log(`test listening on ${port}`);
